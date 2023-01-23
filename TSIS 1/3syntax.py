@@ -16,5 +16,10 @@ y = "Hello, World!"
 #This is a comment.
 print("Hello, World!")
 
+
 #exercise1
 print("Hello World")
+
+#exercise2
+if 5 > 2:
+  print("Five is greater than two!")
