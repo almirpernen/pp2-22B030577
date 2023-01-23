@@ -7,7 +7,7 @@ print(txt.format(price))
 txt = "The price is {:.2f} dollars" 
 
 #example3
-print(txt.format(price, itemno, count))
+print(txt.format(price))
 
 #example4
 quantity = 3
