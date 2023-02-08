@@ -24,4 +24,4 @@ x = y = z = "Orange"
 #exercise7
 def myfunc():
     global x
-    x = fantastic
+    x = "fantastic"
