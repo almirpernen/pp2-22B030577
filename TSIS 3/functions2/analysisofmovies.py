@@ -93,8 +93,8 @@ def average_imdb_by_category(movies, category):
     category_movies = movies_by_category(movies, category)
     return average_imdb(category_movies)
 
-# print(is_high_imdb(movies[0])) -> True
-# print(high_imdb_movies(movies)) (list)
-# print(movies, "Thriller")
-# print(average_imdb(movies)) -> 6.486666666666667
-# print(average_imdb_by_category(movies, "Romance")) -> 6.44 
+#print(is_high_imdb(movies[int(input())])) #-> True
+#print(high_imdb_movies(movies)) #(list)
+#print(movies_by_category(movies, input()))
+#print(average_imdb(movies)) #-> 6.486666666666667
+print(average_imdb_by_category(movies, input()))
