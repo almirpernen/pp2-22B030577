@@ -1,90 +1,84 @@
 import re
 
-def zeroOrMoreB():
-    txt = input()
-    x = re.findall("ab*", txt)
-    print(x)
-# zeroOrMoreB()
+text = input()
 
-def twoORthree():
-    txt = input()
-    x = re.findall("ab{2,3}", txt)
-    print(x)
-# twoORthree()
+#Exercise 1 - Write a Python program that matches a string that has an 'a' followed by zero or more 'b''s. 
+def test1(text):
+    pattern = "ab*"
+    m = re.findall(pattern, text)
+    print(m)
+# WORKING 
 
-def sequenceOfLowerLetters():
-    txt = input()
-    l = []
-    txt = txt.split('_')
-    for i in range(0, len(txt) - 1):
-        x1 = re.search("[a-z]", txt[i])
-        x2 = re.search("[a-z]", txt[i + 1])
-        if x1 and x2:
-            l.append(txt[i] + "_" + txt[i + 1])
-    print(l)
-# our problem was if a_i_a_b it printed a_i and a_b, I fixed this problem via using two searches that return object
-# sequenceOfLowerLetters()
+#Exercise 2 - Write a Python program that matches a string that has an 'a' followed by two to three 'b'.
+def test2(text):
+    pattern = "ab{2,3}"
+    m = re.findall(pattern, text)
+    print(m)
+# WORKING
 
-def findAa():
-    txt = input()
-    x = re.findall("[A-Z][a-z]+", txt)
-    print(x)
-# findAa()
+#Exercise 3 - Write a Python program to find sequences of lowercase letters joined with a underscore.
+def test3(text):
+    m = re.split("_", text)
+    result = []
+    for i in range(len(m) - 1):
+        if m[i] != ' ' and m[i + 1] != ' ' and m[i].islower() and m[i + 1 ].islower():
+            result.append(f"{m[i]}_{m[i+1]}")
+    print(result)
+#WORKING
 
-def startWithAEndWithB():
-    txt = input()
-    x = re.findall("a.*b", txt)
-    print(x)
-# startWithAEndWithB()
+#Exercise 4 - Write a Python program to find the sequences of one upper case letter followed by lower case letters.
+def test4(text):
+    pattern = "[A-Z][a-z]+"
+    m = re.findall(pattern, text)
+    print(m)
+#WORKING
 
-def replace():
-    txt = input()
-    x = txt
-    # pattern = ",. "
-    x = re.sub("\s", ":", txt)
-    x = re.sub("[.]", ":", x)
-    x = re.sub(",", ":", x)
-# replace()
+#Exercise 5 - Write a Python program that matches a string that has an 'a' followed by anything, ending in 'b'.
+def test5(text):
+    pattern = "a.+b$"
+    m = re.findall(pattern, text)
+    print(m)
+#WORKING
 
-def snakeToCamel():
-    txt = input()
-    x = txt.split("_")
-    for i in range(1, len(x)):
-        x[i] = x[i].capitalize()
-    for x in x:
-        print(x, end='')
-# snakeToCamel()
+#Exercise 6 - Write a Python program to replace all occurrences of space, comma, or dot with a colon.
+def test6(text):
+    m = re.sub("[,. ]", ":", text)
+    print(m)
+#WORKING
 
-def splitUpper():
-    txt = input()
-    x = txt
-    for i in range(0, len(x)):
-        if x[i].isupper():
-            x1 = x[:i]
-            x2 = x[i + 1:]
-            x = x1 + ' ' + x2
-    l = x.split(' ')
-    l2 = []
-    for i in l:
-        if len(i) != 0:
-            l2.append(i)
-# splitUpper()
+#Exercise 7 - Write a python program to convert snake case string to camel case string.
+def test7(text):
+    print(''.join(x.capitalize() or '_' for x in text.split('_')))
+#WORKING
 
-def splitUpper2():
-    txt = input()
-    x = re.sub(r"([A-Z][a-z]+)", r" \1", txt).strip()
-    print(x)
-# splitUpper2()
+#Exercise 8 - Write a Python program to split a string at uppercase letters.
+def test8(text):
+    print(re.findall("[A-Z][^A-Z]*", text))
+#WORKING
 
-def camelToSnake():
-    txt = input()    
-    x = re.sub(r"([A-Z][a-z]+)", r" \1", txt).strip()
-    # camelCase
-    # print(x)
-    # camel Case
-    x = x.split(' ')
-    s = ''
-    for i in range(0, len(x)):
-        s += x[i].lower() + '_'
-    print(s[:-1])
-# camelToSnake()
+
+#Exercise 9 - Write a Python program to insert spaces between words starting with capital letters.
+def test9(text):
+    m = re.findall("[A-Z][a-z]*", text)
+    print(' '.join(m))
+#WORKING
+
+#Exercise 10 - Write a Python program to convert a given camel case string to snake case.
+def test10(text):
+    print('_'.join(
+        re.sub('([A-Z][a-z]+)', r' \1',
+        re.sub('([A-Z]+)', r' \1',
+        text.replace('-', ' '))).split()).lower())
+#WORKING
+    
+
+# test2(text) #working
+# test1(text) #working
+# test3(text) #working
+# test4(text) #working
+# test5(text) #working
+# test6(text) #working
+# test7(text) #working
+# test8(text) #working
+# test9(text) #working
+# test10(text) #working
