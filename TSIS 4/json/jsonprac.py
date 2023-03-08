@@ -1,8 +1,9 @@
 import json
 
-# temp_file = json.dumps(sample-data.json)
-with open("sample-data.json", "r") as file:
+with open('sample_data.json', "r") as file:
     data = json.load(file)
+temp_file = json.dumps('sample_data.json')
+
 
 print("Interface status")
 print("=" * 80)
