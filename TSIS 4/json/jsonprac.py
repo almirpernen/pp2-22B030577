@@ -1,6 +1,6 @@
 import json
 
-with open('sample_data.json', "r") as file:
+with open('TSIS 4/json/sample_data.json', "r") as file:
     data = json.load(file)
 temp_file = json.dumps('sample_data.json')
 
