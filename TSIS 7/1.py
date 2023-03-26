@@ -6,21 +6,21 @@ h = 400
 angle1 = 0
 angle2 = 0
 
-pygame.mixer.music.load("sound\\background.mp3")
+pygame.mixer.music.load("1sttask\sound\\background.mp3")
 pygame.mixer.music.play(-1)
 
 f_sys = pygame.font.SysFont('twcen',30)
 sc = pygame.display.set_mode((w,h),pygame.RESIZABLE)
 
 pygame.display.set_caption("simple clock")
-pygame.display.set_icon(pygame.image.load("image\icon.bmp"))
+pygame.display.set_icon(pygame.image.load("1sttask\image\icon.bmp"))
 
 white = (255,255,255)
 sc.fill(white)
 
-mickey_surf = pygame.image.load("image\mickeyclock.jpg")
-left_hand_surf = pygame.image.load("image\left_hand.png").convert_alpha()
-right_hand_surf = pygame.image.load("image\\right_hand.png").convert_alpha()
+mickey_surf = pygame.image.load("1sttask\image\mickeyclock.jpg")
+left_hand_surf = pygame.image.load("1sttask\image\left_hand.png").convert_alpha()
+right_hand_surf = pygame.image.load("1sttask\image\\right_hand.png").convert_alpha()
 
 mickey_surf = pygame.transform.scale( mickey_surf ,(mickey_surf.get_width()//2.7 , mickey_surf.get_height()//2.7))
 clock = pygame.time.Clock()
