@@ -63,7 +63,7 @@ song_end = pygame.USEREVENT
 pygame.mixer.music.set_endevent(song_end)
 clock = pygame.time.Clock()
 x = 33
-while True:
+while 1:
     sc.fill((0, 0, 0))
     sc.blit(icon_play, icon_play_rect)
     sc.blit(icon_next, icon_next_rect)
