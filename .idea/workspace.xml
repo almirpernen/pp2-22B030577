@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1eaffb81-0ca9-499b-ab5f-77869b05f798" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSIS 8/street_racer.py" beforeDir="false" afterPath="$PROJECT_DIR$/TSIS 8/street_racer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSIS 8/snake.py" beforeDir="false" afterPath="$PROJECT_DIR$/TSIS 8/snake.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +56,9 @@
       <workItem from="1679990255322" duration="376000" />
       <workItem from="1679991255934" duration="138000" />
       <workItem from="1680442852519" duration="1428000" />
+      <workItem from="1680456351777" duration="363000" />
+      <workItem from="1680500972988" duration="1376000" />
+      <workItem from="1680512100296" duration="4072000" />
     </task>
     <servers />
   </component>
@@ -74,12 +77,13 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/pp2python$paint.coverage" NAME="paint Coverage Results" MODIFIED="1680512390580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TSIS 8" />
     <SUITE FILE_PATH="coverage/pp2python$pygame.coverage" NAME="pygame Coverage Results" MODIFIED="1679812495158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TSIS 7" />
     <SUITE FILE_PATH="coverage/pp2python$street_racer.coverage" NAME="street_racer Coverage Results" MODIFIED="1680444209985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TSIS 8" />
     <SUITE FILE_PATH="coverage/pp2python$1user_input.coverage" NAME="1user input Coverage Results" MODIFIED="1678813483337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TSIS 1/1 User Input" />
     <SUITE FILE_PATH="coverage/pp2python$2.coverage" NAME="2 Coverage Results" MODIFIED="1679990412600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TSIS 7" />
     <SUITE FILE_PATH="coverage/pp2python$1.coverage" NAME="1 Coverage Results" MODIFIED="1679990335151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TSIS 7" />
-    <SUITE FILE_PATH="coverage/pp2python$snake.coverage" NAME="snake Coverage Results" MODIFIED="1680443257675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TSIS 8" />
+    <SUITE FILE_PATH="coverage/pp2python$snake.coverage" NAME="snake Coverage Results" MODIFIED="1680517098302" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TSIS 8" />
     <SUITE FILE_PATH="coverage/pp2python$3.coverage" NAME="3 Coverage Results" MODIFIED="1679991292883" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TSIS 7" />
   </component>
 </project>

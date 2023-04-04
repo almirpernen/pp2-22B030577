@@ -9,11 +9,13 @@ WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 BLUE = (0, 0, 255)
 YELLOW = (255, 255, 0)
+GRAY = (50, 50, 50)
 
 SCREEN = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
-BLOCK_SIZE = 40
+BLOCK_SIZE = 20
 pygame.display.set_caption('Snake v0')
+
 
 
 class Point:
@@ -87,6 +89,7 @@ class Snake:
         self.points[0].x += dx
         self.points[0].y += dy
 
+
         head = self.points[0]
         if head.x > WIDTH // BLOCK_SIZE:
             head.x = 0
@@ -107,9 +110,9 @@ class Snake:
 
 def draw_grid():
     for x in range(0, WIDTH, BLOCK_SIZE):
-        pygame.draw.line(SCREEN, WHITE, (x, 0), (x, HEIGHT), width=1)
+        pygame.draw.line(SCREEN, GRAY, (x, 0), (x, HEIGHT), width=1)
     for y in range(0, HEIGHT, BLOCK_SIZE):
-        pygame.draw.line(SCREEN, WHITE, (0, y), (WIDTH, y), width=1)
+        pygame.draw.line(SCREEN, GRAY, (0, y), (WIDTH, y), width=1)
 
 
 def main():
@@ -117,6 +120,9 @@ def main():
     snake = Snake()
     food = Food(5, 5)
     dx, dy = 0, 0
+    score = 0
+    speed = 5
+    level = 0
 
     while running:
         SCREEN.fill(BLACK)
@@ -136,6 +142,10 @@ def main():
 
         snake.move(dx, dy)
         if snake.check_collision(food):
+            score += 1
+            if score % 4 == 0:
+                speed += 2
+                level += 1
             snake.points.append(Point(food.x, food.y))
             food.location.x = random.randint(0, WIDTH // BLOCK_SIZE - 1)
             food.location.y = random.randint(0, HEIGHT // BLOCK_SIZE - 1)
@@ -144,8 +154,17 @@ def main():
         snake.update()
         draw_grid()
 
+
+        font = pygame.font.SysFont('Bauhaus 93', 30)
+        text = font.render('Score: ' + str(score), True, WHITE)
+        SCREEN.blit(text, (10, 10))
+
+        font = pygame.font.SysFont('Bauhaus 93', 30)
+        text = font.render('Level: ' + str(level), True, WHITE)
+        SCREEN.blit(text, (10, 50))
+
         pygame.display.flip()
-        clock.tick(5)
+        clock.tick(speed)
 
 
 if __name__ == '__main__':
