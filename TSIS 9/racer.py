@@ -22,6 +22,7 @@ SCREEN_WIDTH = 400
 SCREEN_HEIGHT = 600
 SPEED = 5
 SCORE = 0
+sc = 0
 
 # Setting up Fonts
 font = pygame.font.SysFont("Verdana", 60)
@@ -105,16 +106,16 @@ all_sprites.add(C1)
 
 
 # Adding a new User event
-INC_SPEED = pygame.USEREVENT + 1
-pygame.time.set_timer(INC_SPEED, 1000)
+# INC_SPEED = pygame.USEREVENT + 1
+# pygame.time.set_timer(INC_SPEED, 1000)
 
 # Game Loop
 while True:
 
     # Cycles through all events occuring
     for event in pygame.event.get():
-        if event.type == INC_SPEED:
-             SPEED += 0.1
+        # if event.type == INC_SPEED:
+        #      SPEED += 0.1
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
@@ -132,6 +133,13 @@ while True:
         Coin.disappear(C1)
         x = random.randint(1,3)
         SCORE += x
+    if SCORE // 4 >> sc:
+        SPEED += 1
+        sc += 1
+
+    font = pygame.font.SysFont('Bauhaus 93', 20)
+    text = font.render('Speed: ' + str(SPEED - 4), True, BLACK)
+    DISPLAYSURF.blit(text, (SCREEN_WIDTH - 140, 10))
 
     # To be run if collision occurs between Player and Enemy
     if pygame.sprite.spritecollideany(P1, enemies):
