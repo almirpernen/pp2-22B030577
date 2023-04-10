@@ -1,4 +1,4 @@
-import random
+import random, time
 
 import pygame
 
@@ -16,7 +16,6 @@ clock = pygame.time.Clock()
 BLOCK_SIZE = 20
 pygame.display.set_caption('Snake v0')
 
-sc = 0
 
 
 
@@ -37,6 +36,11 @@ class Food:
     @property
     def y(self):
         return self.location.y
+
+    def generate_new_food(self):
+        x = random.randint(0, WIDTH // BLOCK_SIZE - 1)
+        y = random.randint(0, HEIGHT // BLOCK_SIZE - 1)
+        return self(x, y)
 
     def update(self):
         pygame.draw.rect(
@@ -125,6 +129,9 @@ def main():
     score = 0
     speed = 5
     level = 0
+    sc = 0
+
+    last_food_time = pygame.time.get_ticks()
 
     while running:
         SCREEN.fill(BLACK)
@@ -146,13 +153,20 @@ def main():
         if snake.check_collision(food):
             g = random.randint(1, 3)
             score += g
-            if score // 4 > sc:
+            if score // 4 >> sc:
                 level += 1
                 speed += 2
+                sc += 1
+
 
             snake.points.append(Point(food.x, food.y))
             food.location.x = random.randint(0, WIDTH // BLOCK_SIZE - 1)
             food.location.y = random.randint(0, HEIGHT // BLOCK_SIZE - 1)
+
+        current_time = pygame.time.get_ticks()
+        if current_time - last_food_time >= 10000:
+            food = Food.generate_new_food(Food)
+            last_food_time = current_time
 
         food.update()
         snake.update()
@@ -168,7 +182,7 @@ def main():
         SCREEN.blit(text, (10, 50))
 
         font = pygame.font.SysFont('Bauhaus 93', 30)
-        text = font.render('Speed: ' + str(speed), True, WHITE)
+        text = font.render('Speed: ' + str((speed - 5) // 2), True, WHITE)
         SCREEN.blit(text, (WIDTH - 140 , 10))
 
         pygame.display.flip()
