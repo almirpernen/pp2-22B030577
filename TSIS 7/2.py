@@ -80,7 +80,7 @@ while True:
                 begin = True
                 music = musics[i]
                 i = musics.index(music)
-                pygame.mixer.music.load(f'music\{music}')
+                pygame.mixer.music.load(f'2ndtask\music\{music}')
                 pygame.mixer.music.play()
                 icon = 0
                 x = 33
@@ -102,9 +102,9 @@ while True:
                 else:
                     i += 1
                     icon += 1
-                pygame.mixer.music.load(f'music\{musics[i]}')
+                pygame.mixer.music.load(f'2ndtask\music\{musics[i]}')
                 pygame.mixer.music.play()
-                a = pygame.mixer.Sound(f'music\{musics[i]}')
+                a = pygame.mixer.Sound(f'2ndtask\music\{musics[i]}')
 
             if event.key == pygame.K_LEFT and is_sing:
                 x = 33
@@ -116,7 +116,7 @@ while True:
                     icon -= 1
 
                 pygame.mixer.music.rewind()
-                pygame.mixer.music.load(f'music\{musics[i]}')
+                pygame.mixer.music.load(f'2ndtask\music\{musics[i]}')
                 pygame.mixer.music.play()
 
             if event.key == pygame.K_UP:
@@ -139,7 +139,7 @@ while True:
         else:
             i -= 1
         song_end1 = False
-        pygame.mixer.music.load(f'music\{musics[i]}')
+        pygame.mixer.music.load(f'2ndtask\music\{musics[i]}')
         pygame.mixer.music.play()
 
     if stop:
